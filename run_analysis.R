@@ -45,7 +45,7 @@ setwd("C:/coursera/Prog_Assign/getdata_projectfiles_UCI HAR Dataset (3)/UCI HAR 
 #merge all all datasets to one dataset table.     
        dataset_All <-cbind(Subject_both,Y_both,X_both_keep)
        write.csv( dataset_All, "C:/coursera/Prog_Assign/getdata_projectfiles_UCI HAR Dataset (3)/dataset.csv",row.names=FALSE)
-       
+       write.table( dataset_All, "C:/coursera/Prog_Assign/getdata_projectfiles_UCI HAR Dataset (3)/dataset.txt",row.names=FALSE)
 #average of each variable for each activity and each subject.
       #get all numeric variables 
        variables <- dataset_All[, 3:dim(dataset_All)[2]] 
@@ -54,4 +54,4 @@ setwd("C:/coursera/Prog_Assign/getdata_projectfiles_UCI HAR Dataset (3)/UCI HAR 
        names(dataset_Summary)[1] <- "SubjectId"
        names(dataset_Summary)[2] <- "ActivityName"
        write.csv( dataset_Summary, "C:/coursera/Prog_Assign/getdata_projectfiles_UCI HAR Dataset (3)/dataset_Summary.csv",row.names=FALSE)
-       
+       write.table( dataset_Summary, "C:/coursera/Prog_Assign/getdata_projectfiles_UCI HAR Dataset (3)/dataset_Summary.txt",row.names=FALSE)
