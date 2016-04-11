@@ -39,5 +39,5 @@ R Script procedure followed:
      7.	In X data set, keep only the features selected in features (only mean and std variables).
      8.	Merge Y dataset with activity by Activity_id.
      9.	Merge all datasets(X, Y and Subject) to one dataset table.
-     10.	Write the dataset to a CSV file to your local directory.
-     11.	Average of each variable for each activity and each subject is calculated and dataset is written to CSV file in local                  directory.
+     10.	Write the dataset to a txt file to your local directory.
+     11.	Average of each variable for each activity and each subject is calculated and dataset is written to txt file in local                  directory.
