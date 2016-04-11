@@ -31,6 +31,7 @@ Steps involved:
 R Script procedure followed:
 
    1.	Set the folder location to local directory where files are saved.
+   (in the run_analysis.R, change the Directory in setWD to local directory where you saved the source data)
    2.	Read in the Subjects datasets for Test and Train and merge subject datasets together.
    3.	Read in the X datasets for Test and Train merge X datasets together.
    4.	Read in the Y datasets for Test and Train merge Y datasets together.
