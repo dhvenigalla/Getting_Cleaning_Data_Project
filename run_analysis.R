@@ -25,13 +25,13 @@ setwd("C:/coursera/Prog_Assign/getdata_projectfiles_UCI HAR Dataset (3)/UCI HAR 
 
 #readin features dataset that has list of all features and set column names to more descriptive names.
         #extract only mean and std in features dataset.
-        features <- read.table("C:/coursera/Prog_Assign/getdata_projectfiles_UCI HAR Dataset (3)/features.txt")
+        features <- read.table("../features.txt")
         colnames(features) <-c("featuresId","featuresName")
         features_keep <- grep("-mean\\()|-std\\()",features$featuresName)
         
 #readin activities_label dataset that has list of activity labels and set column names to more descriptive names.
 
-        activity_labels <- read.table("c:/coursera/Prog_Assign/getdata_projectfiles_UCI HAR Dataset (3)/activity_labels.txt")
+        activity_labels <- read.table("../activity_labels.txt")
         colnames(activity_labels) <-c("activityId","activityName")
         
 #**************************************************************************
@@ -44,8 +44,8 @@ setwd("C:/coursera/Prog_Assign/getdata_projectfiles_UCI HAR Dataset (3)/UCI HAR 
        names(Y_both) <- "activityName"
 #merge all all datasets to one dataset table.     
        dataset_All <-cbind(Subject_both,Y_both,X_both_keep)
-       write.csv( dataset_All, "C:/coursera/Prog_Assign/getdata_projectfiles_UCI HAR Dataset (3)/dataset.csv",row.names=FALSE)
-       write.table( dataset_All, "C:/coursera/Prog_Assign/getdata_projectfiles_UCI HAR Dataset (3)/dataset.txt",row.names=FALSE)
+       write.csv( dataset_All, "../dataset.csv",row.names=FALSE)
+       write.table( dataset_All, "../dataset.txt",row.names=FALSE)
 #average of each variable for each activity and each subject.
       #get all numeric variables 
        variables <- dataset_All[, 3:dim(dataset_All)[2]] 
@@ -53,5 +53,5 @@ setwd("C:/coursera/Prog_Assign/getdata_projectfiles_UCI HAR Dataset (3)/UCI HAR 
       
        names(dataset_Summary)[1] <- "SubjectId"
        names(dataset_Summary)[2] <- "ActivityName"
-       write.csv( dataset_Summary, "C:/coursera/Prog_Assign/getdata_projectfiles_UCI HAR Dataset (3)/dataset_Summary.csv",row.names=FALSE)
-       write.table( dataset_Summary, "C:/coursera/Prog_Assign/getdata_projectfiles_UCI HAR Dataset (3)/dataset_Summary.txt",row.names=FALSE)
+       write.csv( dataset_Summary, "../dataset_Summary.csv",row.names=FALSE)
+       write.table( dataset_Summary, "../dataset_Summary.txt",row.names=FALSE)
